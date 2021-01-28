@@ -1,0 +1,25 @@
+<mat-card>
+  <form [formGroup]="createForm" #formDirective="ngForm" (submit)="createPangolin(formDirective)">
+    <div class="example-container">
+      <mat-form-field>
+        <input matInput placeholder="username" formControlName="username" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="password" formControlName="password" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="age" formControlName="age" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="famille" formControlName="famille" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="race" formControlName="race" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="nourriture" formControlName="nourriture" required>
+      </mat-form-field>
+      <button mat-button type="submit">Signup</button>
+    </div>
+  </form>
+</mat-card>
