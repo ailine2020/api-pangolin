@@ -8,7 +8,7 @@
       "nourriture": "fourmis",
       "image": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Manis_tetradactyla_%2829645778336%29.jpg",
       "password": "12345678",
-      "username": "tetradactyla"
+      "username": "Tetradactyla"
     },
     {
       "friends": [],
@@ -28,7 +28,7 @@
       "nourriture": "termites",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Manis_gigantea_01_by_Line1.JPG/435px-Manis_gigantea_01_by_Line1.JPG",
       "password": "12345678",
-      "username": "gigantea"
+      "username": "Gigantea"
     },
     {
       "friends": [],
@@ -38,7 +38,7 @@
       "nourriture": "termites",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Scaly_ant_eater_by_Dushy_Ranetunge_2.jpg/435px-Scaly_ant_eater_by_Dushy_Ranetunge_2.jpg",
       "password": "12345678",
-      "username": "pentadactyla"
+      "username": "Gentadactyla"
     },
     {
       "friends": [],
@@ -48,7 +48,7 @@
       "nourriture": "fourmis et termites",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Manis_javanica_01_by_Line1.JPG/220px-Manis_javanica_01_by_Line1.JPG",
       "password": "12345678",
-      "username": "javanica"
+      "username": "Javanica"
     }
   ]
 }
