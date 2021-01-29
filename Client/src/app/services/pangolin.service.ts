@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { pangolin } from './models/pangolin';
+import { pangolin } from '../models/pangolin';
 
 @Injectable({
   providedIn: 'root',

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { pangolin } from '../models/pangolin';
-import { PangolinService } from '../pangolin.service';
-import { AuthService } from '../auth.service';
+import { PangolinService } from '../services/pangolin.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-all-pangolin',

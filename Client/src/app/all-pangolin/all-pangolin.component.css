@@ -4,6 +4,7 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  padding-bottom: 100px;
 }
 
 .pangolin-card{
@@ -21,6 +22,15 @@
 
 button{
  color:#e2b4b7
+}
+/* 
+p{
+  padding:5px;
+} */
+
+.icons{
+  display: flex;
+  justify-content: center;
 }
 
 

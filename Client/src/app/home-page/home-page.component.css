@@ -1,5 +1,9 @@
-.image-home{
-    width: 40%;
-    margin: auto;
-    display: block;
+.image-home {
+  width: 40%;
+  margin: auto;
+  display: block;
+}
+
+p {
+  padding: 100px;
 }

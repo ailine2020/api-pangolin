@@ -12,7 +12,7 @@
         Il se nourrit principalement de {{pangolin.nourriture}}.
       </p>
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions class="icons">
       <button mat-button (click)="addFriend()"><span class="material-icons">person_add</span></button>
       <button mat-button (click)="deleteFriend()"><span class="material-icons">person_remove</span></button>
       <button mat-button [routerLink]="['/edit-pangolin', pangolin._id]"><span class="material-icons">
