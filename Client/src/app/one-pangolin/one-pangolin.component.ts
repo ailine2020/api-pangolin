@@ -27,4 +27,11 @@ export class OnePangolinComponent implements OnInit {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     this.OnePangolin$ = this.pangolinService.getPangolinById(id);
   }
+  addFriend() {
+    console.log('Success! friend added!');
+  }
+
+  deleteFriend() {
+    console.log('Success! deleted friend!');
+  }
 }

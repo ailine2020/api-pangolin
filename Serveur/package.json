@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./bin/www",
+    "seed-pangolins": "node ./bin/pangolins.seed.js",
     "dev": "nodemon ./bin/www"
   },
   "keywords": [],
@@ -19,6 +20,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "jsonwebtoken": "^8.5.1",
     "local": "^0.3.3",
     "mongoose": "^5.9.24",
     "morgan": "^1.10.0",

@@ -25,4 +25,14 @@ export class AllPangolinComponent implements OnInit {
     }
     this.allPangolin$ = this.pangolinService.getPangolin();
   }
+  addFriend(){
+  console.log("Success! friend added!");
+  window.alert('Success! friend added!');
+ 
+      }
+
+  deleteFriend(){
+    console.log("Success! deleted friend!"); 
+    window.alert('Success! deleted friend!');
+  }
 }

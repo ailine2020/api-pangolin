@@ -1,0 +1,21 @@
+.OnePangolin {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.pangolin-card {
+  background-color: #657d81;
+  width: 50%;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.title-card {
+  text-decoration: none;
+  color: #fef8ec;
+  font-weight: 800;
+}
+
+button {
+  color: #e2b4b7;
+}

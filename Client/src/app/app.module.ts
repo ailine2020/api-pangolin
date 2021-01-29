@@ -11,9 +11,10 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { OnePangolinComponent } from './one-pangolin/one-pangolin.component';
 import { EditPangolinComponent } from './edit-pangolin/edit-pangolin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
+import { HomePageComponent } from './home-page/home-page.component';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SignupComponent } from './signup/signup.component';
     EditPangolinComponent,
     SigninComponent,
     SignupComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,9 +34,9 @@ import { SignupComponent } from './signup/signup.component';
     BrowserModule,
     HttpClientModule,
     MaterialModule,
-    CommonModule,
     FormsModule,
-    ReactiveFormsModule  ],
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

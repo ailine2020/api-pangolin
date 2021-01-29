@@ -7,20 +7,21 @@ import { OnePangolinComponent } from './one-pangolin/one-pangolin.component';
 import { EditPangolinComponent } from './edit-pangolin/edit-pangolin.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
-  {path: 'signin',component: SigninComponent},
-  {path: 'signout',component: SigninComponent},
-  {path: 'signup',component: SignupComponent},
-  {path: 'pangolin',component: AllPangolinComponent},
-  {path: ':id',component: OnePangolinComponent},
-  {path: 'pangolin/:id',component: OnePangolinComponent},
-  {path: 'edit-pangolin/:id',component: EditPangolinComponent},
-  {path: '**',component: ErrorPageComponent}
+  { path: '', component: HomePageComponent },
+  { path: 'signin', component: SigninComponent },
+  { path: 'signout', component: SigninComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'pangolin', component: AllPangolinComponent },
+  { path: 'pangolin/:id', component: OnePangolinComponent },
+  { path: 'edit-pangolin/:id', component: EditPangolinComponent },
+  { path: '**', component: ErrorPageComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

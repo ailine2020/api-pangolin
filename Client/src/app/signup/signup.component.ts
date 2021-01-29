@@ -40,11 +40,13 @@ export class SignupComponent implements OnInit {
     }
   }
   signupSuccess(data: object, formDirective: FormGroupDirective) {
-    console.log('OK handleSuccess - Pangolin created', data);
+    console.log('OK Success - Pangolin created', data);
+    window.alert('Success!');
     this.router.navigate(['/pangolin']);
   }
 
   signupError(error: any) {
-    console.error('KO handleError - Pangolin NOT created', error);
+    console.error('KO Error - Pangolin NOT created', error);
+    window.alert('Error')
   }
 }

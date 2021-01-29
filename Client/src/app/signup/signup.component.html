@@ -1,11 +1,12 @@
-<mat-card>
+<mat-card class="mat-card">
+  <h2>Sign up</h2>
   <form [formGroup]="createForm" #formDirective="ngForm" (submit)="createPangolin(formDirective)">
-    <div class="example-container">
+    <div class="signupForm">
       <mat-form-field>
         <input matInput placeholder="username" formControlName="username" required>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="password" formControlName="password" required>
+        <input type="password" matInput placeholder="password" formControlName="password" required minlength="8">
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="age" formControlName="age" required>
@@ -19,7 +20,7 @@
       <mat-form-field>
         <input matInput placeholder="nourriture" formControlName="nourriture" required>
       </mat-form-field>
-      <button mat-button type="submit">Signup</button>
+      <button mat-button type="submit">SIGN UP</button>
     </div>
   </form>
 </mat-card>

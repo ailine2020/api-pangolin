@@ -18,6 +18,7 @@ export class SigninComponent implements OnInit {
     famille: '',
     race: '',
     nourriture: '',
+    image:''
   };
 
   constructor(
@@ -27,24 +28,27 @@ export class SigninComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // if (localStorage.getItem('pangolinId')) {
+    //   this.router.navigate(['pangolin/', localStorage.getItem('pangolinId')]);
+    // }
     this.activatedRoute.params.subscribe((params) => {
-      this.pangolinId = params.pangolinId;
+      this.pangolinId = params.id;
     });
   }
   signin() {
     console.log('pangolin', this.pangolin);
-    this.AuthService.signin(this.pangolin).subscribe((data) => {
-      // localStorage.setItem('currentUser', );
-      // localStorage.getItem('currentUser');
-      // localStorage.removeItem('currentUser');
+    this.AuthService.signin(this.pangolin).subscribe((data: pangolin) => {
       this.signinSuccess(data), (error: any) => this.signinError(error);
     });
   }
   signinSuccess(data: pangolin) {
+    window.alert('Success! Logged in!');
     console.log('logged in', data);
-    // this.router.navigate(['/pangolin', this.pangolinId]);
+    // localStorage.getItem(data._id);
+    this.router.navigate(['/']);
   }
-  signinError(error: any) {
+  signinError(error: any) {    
+    window.alert('Error !Identifiants incorrects ');
     console.error('NOT logged in', error);
   }
 }

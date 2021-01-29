@@ -1,4 +1,19 @@
-.toolbar{
-    background: black;
-    color: white;
+.toolbar {
+  display: flex;
+  justify-content: space-around;
+  background: #657d81;
+  color: white;
+  }
+
+a {
+  text-decoration: none;
+  color: #e2b4b7;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+button {
+  color: #e2b4b7;
+  font-weight: 500;
+  font-size: 15px;
 }

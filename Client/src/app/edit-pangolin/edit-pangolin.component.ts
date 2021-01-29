@@ -28,9 +28,9 @@ export class EditPangolinComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // if (!this.AuthService.isAuthenticated) {
-    //   this.router.navigate(['/signin']);
-    // }
+    if (!this.AuthService.isAuthenticated) {
+      this.router.navigate(['/signin']);
+    }
     this.editForm = new FormGroup({
       username: new FormControl(''),
       password: new FormControl(''),
@@ -62,6 +62,7 @@ export class EditPangolinComponent implements OnInit {
   }
   editSuccess(data: Object, formDirective: FormGroupDirective) {
     console.log('OK ! Pangolin updated', data);
+    window.alert('Success! Pangolin updated');
     this.pangolinService.getPangolinById(this.pangolinId).subscribe(
       (data) => {
         this.pangolin = data;
@@ -71,6 +72,7 @@ export class EditPangolinComponent implements OnInit {
     );
   }
   editError(error: any) {
-    console.log('NO! Pangolin NOT updated', error);
+    console.log('Error! Pangolin NOT updated', error);
+    window.alert('Error! Pangolin Not updated');
   }
 }

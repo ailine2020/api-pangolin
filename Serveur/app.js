@@ -75,7 +75,7 @@ passport.use(new Strategy({
 app.use(
 	session({
 		secret: process.env.SESSION_SECRET,
-		name: 'api-pangolin',
+		// name: 'api-pangolin',
 		cookie: {
 			maxAge: 60000
 		},
@@ -89,9 +89,7 @@ app.use(
 );
 
 
-app.get("/", (req, res) => res.send("hello :) my api is working"));
-
-app.use("/auth", require("./routes/api.auth"));
+app.use("/auth", require("./routes/api-auth2"));
 app.use("/api/pangolin", require("./routes/api.pangolin"));
 
 

@@ -1,25 +1,30 @@
-<mat-card *ngIf="pangolin">
+<mat-card *ngIf="pangolin" class="mat-card">
+  <h2>Edit Pangolin</h2>
   <form [formGroup]="editForm" #formDirective="ngForm" (submit)=updatePangolin(formDirective)>
     <div class="form-edit">
       <mat-form-field>
-        <input matInput placeholder="username" formControlName="username" [(ngModel)]="pangolin.username" [value]="pangolin.username">
+        <input matInput placeholder="username" formControlName="username" [(ngModel)]="pangolin.username"
+          [value]="pangolin.username">
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="password" formControlName="password"  [(ngModel)]="pangolin.password" [value]="pangolin.password">
+        <input matInput type="password" placeholder="password" formControlName="password" [(ngModel)]="pangolin.password"
+          [value]="pangolin.password">
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="age" formControlName="age"  [(ngModel)]="pangolin.age" [value]="pangolin.age">
+        <input matInput placeholder="age" formControlName="age" [(ngModel)]="pangolin.age" [value]="pangolin.age">
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="famille" formControlName="famille"  [(ngModel)]="pangolin.famille" [value]="pangolin.famille">
+        <input matInput placeholder="famille" formControlName="famille" [(ngModel)]="pangolin.famille"
+          [value]="pangolin.famille">
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="race" formControlName="race"  [(ngModel)]="pangolin.race" [value]="pangolin.race">
+        <input matInput placeholder="race" formControlName="race" [(ngModel)]="pangolin.race" [value]="pangolin.race">
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="nourriture" formControlName="nourriture"  [(ngModel)]="pangolin.nourriture" [value]="pangolin.nourriture">
+        <input matInput placeholder="nourriture" formControlName="nourriture" [(ngModel)]="pangolin.nourriture"
+          [value]="pangolin.nourriture">
       </mat-form-field>
-      <button mat-button type="submit">Update Pangolin</button>
+      <button mat-button type="submit">UPDATE</button>
     </div>
   </form>
 </mat-card>
