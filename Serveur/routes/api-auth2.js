@@ -13,15 +13,15 @@ router.get("/get-pangolin-by-token", (req, res) => {
     try {
         const pangolin = auth.decodeToken(req.header("x-authenticate"));
         const pangolinId = pangolin.infos._id;
-        console.log("should be pangolin", pangolin);
-        res.redirect("/api/users/" + pangolinId);
+        // console.log("should be pangolin", pangolin);
+        res.redirect("/api/pangolins/" + pangolinId);
     } catch (err) {
         res.status(500).json(err.message);
     }
 });
 
 router.post("/signin", async (req, res, next) => {
-    const pangolinInfos = req.body; //
+    const pangolinInfos = req.body;
     if (!pangolinInfos.username || !pangolinInfos.password) {
         res.status(401).json({
             msg: "Identifiants incorrects",
@@ -76,7 +76,7 @@ router.post("/signin", async (req, res, next) => {
 
 router.post("/signup", async (req, res, next) => {
     const pangolin = req.body;
-
+    
     if (!pangolin.username || !pangolin.password || !pangolin.race || !pangolin.famille || !pangolin.nourriture || !pangolin.age) {
         return res.status(422).json({
             msg: "Merci de remplir tous les champs requis.",

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  FormBuilder,
   FormControl,
   FormGroup,
   FormGroupDirective,
@@ -20,7 +19,6 @@ export class EditPangolinComponent implements OnInit {
   pangolin!: pangolin;
   editForm = new FormGroup({});
   constructor(
-    private fb: FormBuilder,
     private pangolinService: PangolinService,
     private activatedRoute: ActivatedRoute,
     private AuthService: AuthService,
