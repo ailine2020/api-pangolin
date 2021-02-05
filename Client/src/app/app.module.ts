@@ -27,7 +27,6 @@ import { MyFriendsComponent } from './my-friends/my-friends.component';
     SigninComponent,
     SignupComponent,
     HomePageComponent,
-    MyFriendsComponent,
   ],
   imports: [
     BrowserModule,

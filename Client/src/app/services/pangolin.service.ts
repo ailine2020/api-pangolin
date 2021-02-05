@@ -17,9 +17,6 @@ export class PangolinService {
   getPangolinById(id: any): Observable<pangolin> {
     return this.htttpClient.get<pangolin>(`${this.baseUrl}/${id}`);
   }
-  getPangolinByToken(id: any): Observable<pangolin[]> {
-    return this.htttpClient.get<pangolin[]>(`${this.baseUrl}/${id}`);
-  }
   updatePangolin(id: string, pangolin: pangolin) {
     return this.htttpClient.patch(`${this.baseUrl}/${id}`, pangolin);
   }
