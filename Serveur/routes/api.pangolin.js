@@ -20,6 +20,14 @@ router.get("/:id", async (req, res, next) => {
         next(err);
     }
 });
+router.get("/:id/my-friends", async (req, res, next) => {
+    try {
+        const pangolins = await pangolinModel.findById(req.params.id).populate("friends");
+        res.json(pangolins);
+    } catch (err) {
+        next(err);
+    }
+});
 router.patch("/:id", async (req, res, next) => {
     var pangolin = {
         ...req.body
@@ -40,6 +48,8 @@ router.patch("/:id/add-friend", async (req, res, next) => {
     var friend = {
         ...req.body
     };
+
+    console.log('req.body add', req.body);
     try {
         const addFriend = await pangolinModel.findByIdAndUpdate(req.params.id, {
             $push: {
@@ -50,6 +60,7 @@ router.patch("/:id/add-friend", async (req, res, next) => {
         });
         res.json(addFriend);
         console.log('addFriend', addFriend);
+        console.log('Friend', friend._id);
     } catch (err) {
         next(err)
     }
@@ -58,6 +69,8 @@ router.patch("/:id/delete-friend", async (req, res, next) => {
     var friend = {
         ...req.body
     };
+    console.log('req.body delete', friend);
+
     try {
         const deleteFriend = await pangolinModel.findByIdAndUpdate(req.params.id, {
             $pull: {
@@ -68,6 +81,7 @@ router.patch("/:id/delete-friend", async (req, res, next) => {
         });
         res.json(deleteFriend);
         console.log('deleteFriend', deleteFriend);
+        console.log('FriendDelete', friend._id);
     } catch (err) {
         next(err)
     }

@@ -1,11 +1,12 @@
 export interface pangolin {
+  token: string;
   _id?: string;
-  isSignedIn?: Boolean;
   username: string;
   password: string;
   age: string;
   famille: string;
   race: string;
   nourriture: string;
-  image:string
+  image: string;
+  friends: [{}];
 }

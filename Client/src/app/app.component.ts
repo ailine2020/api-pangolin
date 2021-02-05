@@ -9,17 +9,14 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent implements OnInit {
   title = 'Client';
-  user: String | null = null;
   constructor(private AuthService: AuthService, private router: Router) {}
-  ngOnInit(): void {
-    this.user = localStorage.getItem('pangolinId');
-  }
+  ngOnInit(): void {}
 
   signout() {
     this.AuthService.signout().subscribe(
       (data: any) => {
         console.log(data);
-        localStorage.removeItem('pangolinId');
+        localStorage.removeItem('token');
         this.router.navigate(['/signin']);
       },
       (err: any) => console.error(err)

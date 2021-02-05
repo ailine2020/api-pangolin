@@ -11,6 +11,7 @@ import { pangolin } from '../models/pangolin';
 export class SigninComponent implements OnInit {
   pangolinId!: string;
   pangolin: pangolin = {
+    token: '',
     _id: '',
     username: '',
     password: '',
@@ -18,7 +19,12 @@ export class SigninComponent implements OnInit {
     famille: '',
     race: '',
     nourriture: '',
-    image:''
+    image: '',
+    friends: [{}],
+  };
+  infos = {
+    username: '',
+    password: '',
   };
 
   constructor(
@@ -28,26 +34,30 @@ export class SigninComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // if (localStorage.getItem('pangolinId')) {
-    //   this.router.navigate(['pangolin/', localStorage.getItem('pangolinId')]);
-    // }
     this.activatedRoute.params.subscribe((params) => {
       this.pangolinId = params.id;
+      console.log('++++++++', this.pangolinId);
     });
+    if (localStorage.getItem('pangolinId')) {
+      this.router.navigate(['pangolin/', localStorage.getItem('pangolinId')]);
+    }
   }
   signin() {
-    console.log('pangolin', this.pangolin);
-    this.AuthService.signin(this.pangolin).subscribe((data: pangolin) => {
+    this.AuthService.signin(this.infos).subscribe((data) => {
+      console.log('pangolin', this.pangolin);
+      console.log('data', data);
       this.signinSuccess(data), (error: any) => this.signinError(error);
     });
   }
   signinSuccess(data: pangolin) {
     window.alert('Success! Logged in!');
     console.log('logged in', data);
-    // localStorage.getItem(data._id);
+    console.log('dataId', data);
+    localStorage.setItem('token', data.token);
+    localStorage.setItem('pangolin', JSON.stringify(data));
     this.router.navigate(['/']);
   }
-  signinError(error: any) {    
+  signinError(error: any) {
     window.alert('Error !Identifiants incorrects ');
     console.error('NOT logged in', error);
   }

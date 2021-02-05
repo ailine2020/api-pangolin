@@ -8,7 +8,6 @@ import { pangolin } from '../models/pangolin';
 })
 export class PangolinService {
   baseUrl = 'http://localhost:8888/api/pangolin';
-  // subscribe: any;
 
   constructor(private htttpClient: HttpClient) {}
 
@@ -18,7 +17,22 @@ export class PangolinService {
   getPangolinById(id: any): Observable<pangolin> {
     return this.htttpClient.get<pangolin>(`${this.baseUrl}/${id}`);
   }
+  getPangolinByToken(id: any): Observable<pangolin[]> {
+    return this.htttpClient.get<pangolin[]>(`${this.baseUrl}/${id}`);
+  }
   updatePangolin(id: string, pangolin: pangolin) {
     return this.htttpClient.patch(`${this.baseUrl}/${id}`, pangolin);
+  }
+  addFriend(currentId: string, pangolin: pangolin) {
+    return this.htttpClient.patch(
+      `${this.baseUrl}/${currentId}/add-friend`,
+      pangolin
+    );
+  }
+  deleteFriend(currentId: string, pangolin: pangolin) {
+    return this.htttpClient.patch(
+      `${this.baseUrl}/${currentId}/delete-friend`,
+      pangolin
+    );
   }
 }

@@ -4,11 +4,11 @@
     <div class="signinForm">
       <mat-form-field>
         <input matInput type="text" placeholder="pangolin username" name="username" id="username"
-          [(ngModel)]="pangolin.username" required>
+          [(ngModel)]="infos.username" required>
       </mat-form-field>
       <mat-form-field>
         <input matInput type="password" placeholder="password" name="password" id="password"
-          [(ngModel)]="pangolin.password" required autocomplete="current password">
+          [(ngModel)]="infos.password" required autocomplete="current password">
       </mat-form-field>
       <button mat-button type="submit">SIGN IN</button>
       <p>

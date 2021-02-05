@@ -1,23 +1,16 @@
 <main class="all-pangolin">
-  <mat-card class="pangolin-card" *ngFor="let pangolin of allPangolin$ | async" as pangolin>
+  <mat-card class="pangolin-card" *ngFor="let pg of allPangolin$ | async" as pg>
     <mat-card-header>
-      <mat-card-title><a class="title-card" [routerLink]="['/pangolin', pangolin._id]">{{pangolin.username}}</a>
+      <mat-card-title [routerLink]="['/pangolin', pg._id]"><a class="title-card">{{pg.username}}</a>
       </mat-card-title>
-      <mat-card-subtitle>{{pangolin.age}} ans</mat-card-subtitle>
+      <mat-card-subtitle>{{pg.age}} ans</mat-card-subtitle>
     </mat-card-header>
-    <img class="image" mat-card-image src={{pangolin.image}} alt="Photo de pangolin">
+    <img class="image" mat-card-image src={{pg.image}} alt="Photo de pangolin">
     <mat-card-content>
       <p>
-        Il appartient à la famille des {{pangolin.famille}} de la race des {{pangolin.race}}.
-        Il se nourrit principalement de {{pangolin.nourriture}}.
+        Il appartient à la famille des {{pg.famille}} de la race des {{pg.race}}.
+        Il se nourrit principalement de {{pg.nourriture}}.
       </p>
     </mat-card-content>
-    <mat-card-actions class="icons">
-      <button mat-button (click)="addFriend()"><span class="material-icons">person_add</span></button>
-      <button mat-button (click)="deleteFriend()"><span class="material-icons">person_remove</span></button>
-      <button mat-button [routerLink]="['/edit-pangolin', pangolin._id]"><span class="material-icons">
-          edit
-        </span></button>
-    </mat-card-actions>
   </mat-card>
 </main>

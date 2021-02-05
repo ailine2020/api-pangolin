@@ -6,19 +6,20 @@ import { pangolin } from '../models/pangolin';
   providedIn: 'root',
 })
 export class AuthService {
-  isAuthenticated = false;
   baseUrl = 'http://localhost:8888/auth';
   constructor(private http: HttpClient) {}
 
   signup(pangolin: pangolin) {
     return this.http.post<pangolin>(`${this.baseUrl}/signup`, pangolin);
   }
-  signin(pangolin: pangolin) {
-    this.isAuthenticated = true;
+  signin(pangolin: any) {
     return this.http.post<pangolin>(`${this.baseUrl}/signin`, pangolin);
   }
   signout() {
-    this.isAuthenticated = false;
     return this.http.get(`${this.baseUrl}/signout`);
+  }
+
+  isAuthenticated(): boolean {
+    return localStorage.getItem('token') !== null;
   }
 }
