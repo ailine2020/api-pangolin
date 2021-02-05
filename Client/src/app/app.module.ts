@@ -15,7 +15,6 @@ import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AddCookieInterceptor } from './services/http-iinterceptor.service';
-import { MyFriendsComponent } from './my-friends/my-friends.component';
 
 @NgModule({
   declarations: [
